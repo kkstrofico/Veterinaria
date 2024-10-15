@@ -1,4 +1,4 @@
-import bsd # se importa las listas que contienen todd la información
+import Veterinaria.src.bsd as bsd # se importa las listas que contienen todd la información
 def asignar(): # funcion que se encargara de asignar un veterinario a una mascota, y una mascota a un veterinario
     while True:
         id_veterinario = input("Ingresa el id veterinario: ") # solicitar id del veterinario
