@@ -7,3 +7,4 @@ class Propietario: #clase propietario que contiene la informacion del propietari
         self.telefono = telefono
         self.correo = correo
         self.mascota = mascota
+    
