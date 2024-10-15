@@ -1,4 +1,4 @@
-import bsd
+import Veterinaria.src.bsd as bsd
 class Propietario: #clase propietario que contiene la informacion del propietario que se va a pedir
     def __init__(self,id="", nombres="", apellidos="", direccion="", telefono="", correo="", mascota=""): #sus atributos
         self.id = id
