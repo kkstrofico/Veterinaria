@@ -37,35 +37,40 @@ class admin:
             
             print(f"\n  LISTA VETERINARIO\n{i}")
             print(f"\n  LISTA MASCOTAS\n{j}")
-    def registrarVeterinario():# Funcion que registra un veterinario
-        while True:
+    def registrar_veterinario():
+        while True: 
             try:
-                id = int(input("Ingresa el id del veterinario: "))
-                if id in bsd.ides_veterinarios:
-                    print("\n\tALERT: el id ingresado ya se encuentra registrado")
+                id = str(input("Ingresa el id del veterinario: ")) #se pide el id 
+                if id in bsd.ides_veterinarios or len(id) != 10: #se hace control de excepciones
+                    print("\n\tALERT: el id ingresado ya se encuentra registrado, o el id debe tener 10 digitos")
+                #if len(id) != 10:
+                    #print("ERROR: el id debe tener 10 digitos")
                 else:
                     while True:
-                        nombre = str(input("ingresa el nombre del veterinario: "))
-                        if nombre.isnumeric() == True:
+                        nombre = str(input("ingresa el nombre del veterinario: ")) #pedir datos
+                        if nombre.isnumeric() == True: #excepcion
                             print("\n\tERROR: el nombre no debe contener numeros")
                         else:
                             break
                     while True:
-                        apellido = str(input("ingresa el apellido del veterinario: "))
-                        if apellido.isnumeric() == True:
+                        apellido = str(input("ingresa el apellido del veterinario: ")) #pedir datos
+                        if apellido.isnumeric() == True: #excepcion 
                             print("\n\tERROR: el apellido no debe contener numeros")
                         else:
                             break
-                    direccion = input("ingresa la direccion del veterinario")
+                    direccion = input("ingresa la direccion del veterinario: ")
+                    break #sale del ciclo for
+            except ValueError:
+                print("\n\tERROR: el dato que ingresaste no es correcto")
+        while True: #se crea un bucle
+            try: 
+                telefono = str(input("ingresa el telefono del veterinario: "))
+                if len(telefono) != 10: #excepcion de 10 numeros
+                    print("\n\tERROR: el telefono debe contener 10 digitos")
+                else:
                     break
             except ValueError:
-                print("ERROR: el dato que ingresaste no es correcto")
-        while True:
-            try:
-                telefono = int(input("ingresa el telefono del veterinario: "))
-            except ValueError:
                 print("\n\tERROR: dato ingresado no valido")
-                break
-        tarjeta = ClasesVeterinario.Veterinario.tarjeta_profesional()
-        ClasesVeterinario.Veterinario(id,nombre,apellido,direccion,telefono,tarjeta)
-admin.registrarVeterinario()
+        tarjeta = ClasesVeterinario.Veterinario.tarjeta_profesional(None) #se llama a la funcion tarjeta profesional para agregar lo de la tarjeta profesional
+        ClasesVeterinario.Veterinario(id,nombre,apellido,direccion,telefono,tarjeta) #se llama a la funcion clasesVeterinario para que se le asignen los datos que fueron ingresados
+admin.registrar_veterinario()
