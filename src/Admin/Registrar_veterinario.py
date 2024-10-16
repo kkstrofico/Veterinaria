@@ -30,4 +30,4 @@ while True:
         print("\n\tERROR: dato ingresado no valido")
     break
 tarjeta = ClasesVeterinario.Veterinario.tarjeta_profesional()
-ClasesVeterinario.Veterinario(id,nombres,apellidos,direccion,telefono,tarjeta)
+ClasesVeterinario.Veterinario(id,nombre,apellido,direccion,telefono,tarjeta)
