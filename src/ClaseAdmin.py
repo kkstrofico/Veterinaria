@@ -37,7 +37,7 @@ class admin:
             
             print(f"\n  LISTA VETERINARIO\n{i}")
             print(f"\n  LISTA MASCOTAS\n{j}")
-    def registrar_veterinario():
+    def registrar_veterinario(): #funcion que se encargara de pedir los datos del veterinario para ser almacenados
         while True: 
             try:
                 id = str(input("Ingresa el id del veterinario: ")) #se pide el id 
@@ -73,4 +73,15 @@ class admin:
                 print("\n\tERROR: dato ingresado no valido")
         tarjeta = ClasesVeterinario.Veterinario.tarjeta_profesional(None) #se llama a la funcion tarjeta profesional para agregar lo de la tarjeta profesional
         ClasesVeterinario.Veterinario(id,nombre,apellido,direccion,telefono,tarjeta) #se llama a la funcion clasesVeterinario para que se le asignen los datos que fueron ingresados
-admin.registrar_veterinario()
+    def consultar_mascotas_propietario():
+        solic_id = str(input("ingresa el id del propietario: "))
+        for i in bsd.lista_propietario:
+            if str(i["id"]) == solic_id:
+                print(f"Mascotas propietario: {i["mascotas"]}") #mostrar los datos del propietario
+                mascota_selec=input("Ingresa el id de la mascota: ")
+                #for y in bsd.ides_mascotas:
+                if mascota_selec in bsd.ides_mascotas:
+                    print(bsd.diccionario_mascota)
+#admin.consultar_mascotas_propietario()
+
+#admin.registrar_veterinario() #llamo la funcion
