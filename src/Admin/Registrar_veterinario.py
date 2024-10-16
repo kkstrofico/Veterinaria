@@ -33,5 +33,10 @@ while True: #se crea un ciclo for
     except ValueError:
         print("\n\tERROR: dato ingresado no valido")
     break
+<<<<<<< HEAD
 tarjeta = ClasesVeterinario.Veterinario.tarjeta_profesional() #se llama a la funcion tarjeta profesional para agregar lo de la tarjeta profesional
 ClasesVeterinario.Veterinario(id,nombre,apellido,direccion,telefono,tarjeta) #se llama a la funcion clasesVeterinario para que se le asignen los datos que fueron ingresados
+=======
+tarjeta = ClasesVeterinario.Veterinario.tarjeta_profesional()
+ClasesVeterinario.Veterinario(id,nombre,apellido,direccion,telefono,tarjeta)
+>>>>>>> b9ce23d69d1fe3ab29a1a13409e0607a69eedd59
