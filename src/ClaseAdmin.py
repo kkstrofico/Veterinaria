@@ -26,6 +26,7 @@ class admin:
                     mascotas_sin_veterinario=[] # id de mascotas que no tienen veterinario
                     if j["Veterinario"]=="": # si en el diccionario de las mascotas, en la clave Veterinario tenga un valor, en caso    de que no, se le asignara el id del veterinario a essta mascota
                         mascotas_sin_veterinario.append(j["id"])
+<<<<<<< HEAD
                         print(f"\n MASCOTAS SIN VETERINARIO\n {mascotas_sin_veterinario[0]}")
                         while True:
                             id_mascota= input("Ingresa el id de la mascota: ") # se solicita el numero de id de la mascota
@@ -61,6 +62,36 @@ class admin:
 
 
 
+=======
+                print(f"\n MASCOTAS SIN VETERINARIO\n {mascotas_sin_veterinario}")
+                while True:
+                    id_mascota= input("Ingresa el id de la mascota: ") # se solicita el numero de id de la mascota
+                    if len(id_mascota) != 4:
+                        print("El id de la mascota es de 4 digitos")
+                    elif id_mascota not in bsd.ides_mascotas: # si el numero de ficha no se encuentra en la lista ides_mascotas
+                        print("Error, ese id no se encuentra")
+                    elif id_mascota.isnumeric()==False:
+                        print("Error, ingresa numeros")
+                    elif id_mascota in i["Mascotas"]: # si el id de la mascota ya esta asignada al veterinario
+                        print("Este veterinario ya tiene esa mascota")
+                    elif id_mascota in mascotas_asignadas_mod:
+                        print("Esa mascota ya le pertenece a otro veterinario")
+                    else:
+                        break
+                i["Mascotas"].append(id_mascota) # se agrega el id de la mascota a la informacion del veterinario
+<<<<<<< HEAD
+                j["Veterinario"]==id_veterinario
+            
+            print(f"\n  LISTA VETERINARIO\n{i}")
+            print(f"\n  LISTA MASCOTAS\n{j}")
+    def registrar_veterinario(): #funcion que se encargara de pedir los datos del veterinario para ser almacenados
+=======
+                j["Veterinario"]=id_veterinario # se agrega el id del veterinario a la informacion de la mascota
+                print(f"\n  LISTA VETERINARIO\n{i}")
+                print(f"\n  LISTA MASCOTAS\n{j}")
+    
+    
+>>>>>>> e26b71d61c9a1a5504ff3e4fa7a9b259986c0a94
                 #OPCION PARA CAMBIAR EL VETERINARIO DE UNA MASCOTA QUE YA TIENE VETERINARIO
                 print("""\n DESEA MODIFICAR UN VETERINARIO DE LA MASCOTA QUE YA TIENE UN VETERINARIO ASIGNADO\n
                     1. SI / 2. NO""")
@@ -104,6 +135,7 @@ class admin:
                         
                     
     def registrar_veterinario():
+>>>>>>> 489d767e3eada7d92eea77dae86d4e409152bb4d
         while True: 
             try:
                 id = str(input("Ingresa el id del veterinario: ")) #se pide el id 
@@ -139,4 +171,19 @@ class admin:
                 print("\n\tERROR: dato ingresado no valido")
         tarjeta = ClasesVeterinario.Veterinario.tarjeta_profesional(None) #se llama a la funcion tarjeta profesional para agregar lo de la tarjeta profesional
         ClasesVeterinario.Veterinario(id,nombre,apellido,direccion,telefono,tarjeta) #se llama a la funcion clasesVeterinario para que se le asignen los datos que fueron ingresados
+<<<<<<< HEAD
 admin.asignar()
+=======
+    def consultar_mascotas_propietario():
+        solic_id = str(input("ingresa el id del propietario: "))
+        for i in bsd.lista_propietario:
+            if str(i["id"]) == solic_id:
+                print(f"Mascotas propietario: {i["mascotas"]}") #mostrar los datos del propietario
+                mascota_selec=input("Ingresa el id de la mascota: ")
+                #for y in bsd.ides_mascotas:
+                if mascota_selec in bsd.ides_mascotas:
+                    print(bsd.diccionario_mascota)
+#admin.consultar_mascotas_propietario()
+
+#admin.registrar_veterinario() #llamo la funcion
+>>>>>>> e26b71d61c9a1a5504ff3e4fa7a9b259986c0a94

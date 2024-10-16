@@ -9,14 +9,14 @@ class Veterinario:#Clase Veterinario
         self.direccion = direccion
         self.telfono = telefono
         self.tarjeta = tarjeta
-        pass
+        
     def registrar_veterinario(self):
         diccionario_veterinario = {
             "id":self.id,
             "nombres":self.nombres,
             "apellidos":self.apellidos,
             "direccion":self.direccion,
-            "telefono":self.telfono,
+            "telefono":self.telefono,
             "tarjeta profesional":self.tarjeta
         }
         bsd.ides_veterinarios.append(self.id)#Se guardardo el id del veterinario a la lista respectiva
