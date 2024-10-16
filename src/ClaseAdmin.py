@@ -40,31 +40,11 @@ class admin:
                     else:
                         break
                 i["Mascotas"].append(id_mascota) # se agrega el id de la mascota a la informacion del veterinario
-<<<<<<< HEAD
                 j["Veterinario"]==id_veterinario
             
             print(f"\n  LISTA VETERINARIO\n{i}")
             print(f"\n  LISTA MASCOTAS\n{j}")
     def registrar_veterinario(): #funcion que se encargara de pedir los datos del veterinario para ser almacenados
-=======
-                j["Veterinario"]=id_veterinario # se agrega el id del veterinario a la informacion de la mascota
-                print(f"\n  LISTA VETERINARIO\n{i}")
-                print(f"\n  LISTA MASCOTAS\n{j}")
-    
-    
-                #OPCION PARA CAMBIAR EL VETERINARIO DE UNA MASCOTA QUE YA TIENE VETERINARIO
-                print("""\n DESEA MODIFICAR UN VETERINARIO DE LA MASCOTA QUE YA TIENE UN VETERINARIO ASIGNADO\n
-                    1. SI
-                    2.NO""")
-                while True:
-                    seleccion = input("").lowe()
-                    if seleccion!= "si" and seleccion !="no":
-                        print("error, ingresa si/no")
-                    else:
-                        break
-                    
-    def registrar_veterinario():
->>>>>>> 489d767e3eada7d92eea77dae86d4e409152bb4d
         while True: 
             try:
                 id = str(input("Ingresa el id del veterinario: ")) #se pide el id 
