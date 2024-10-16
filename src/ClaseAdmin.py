@@ -92,4 +92,4 @@ class admin:
                 print("\n\tERROR: dato ingresado no valido")
         tarjeta = ClasesVeterinario.Veterinario.tarjeta_profesional(None) #se llama a la funcion tarjeta profesional para agregar lo de la tarjeta profesional
         ClasesVeterinario.Veterinario(id,nombre,apellido,direccion,telefono,tarjeta) #se llama a la funcion clasesVeterinario para que se le asignen los datos que fueron ingresados
-admin.registrar_veterinario()
+admin.asignar()

@@ -21,7 +21,7 @@ class Veterinario:#Clase Veterinario
         }
         bsd.ides_veterinarios.append(self.id)#Se guardardo el id del veterinario a la lista respectiva
         bsd.lista_veterinarios.append(diccionario_veterinario) #Se subio a la lista de veterinarios
-    def registrar_mascota(self):
+    def registrar_propietario(self):
         #Solicitar datos propietario
         print("\nINGRESAR DATOS PROPIETARIO\n")
         id = input("ID: "),
@@ -72,5 +72,5 @@ def verificar_mascota_existente(nombre,especie):#Verifica si una mascota existe 
             return True
         else: 
             return False
-Veterinario().registrar_mascota()   
+Veterinario().registrar_propietario()   
 Veterinario().buscar_mascota()
