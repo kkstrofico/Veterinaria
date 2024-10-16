@@ -61,6 +61,40 @@ class admin:
 
 
 
+<<<<<<< HEAD
+=======
+=======
+                print(f"\n MASCOTAS SIN VETERINARIO\n {mascotas_sin_veterinario}")
+                while True:
+                    id_mascota= input("Ingresa el id de la mascota: ") # se solicita el numero de id de la mascota
+                    if len(id_mascota) != 4:
+                        print("El id de la mascota es de 4 digitos")
+                    elif id_mascota not in bsd.ides_mascotas: # si el numero de ficha no se encuentra en la lista ides_mascotas
+                        print("Error, ese id no se encuentra")
+                    elif id_mascota.isnumeric()==False:
+                        print("Error, ingresa numeros")
+                    elif id_mascota in i["Mascotas"]: # si el id de la mascota ya esta asignada al veterinario
+                        print("Este veterinario ya tiene esa mascota")
+                    elif id_mascota in mascotas_asignadas_mod:
+                        print("Esa mascota ya le pertenece a otro veterinario")
+                    else:
+                        break
+                i["Mascotas"].append(id_mascota) # se agrega el id de la mascota a la informacion del veterinario
+                j["Veterinario"]==id_veterinario
+            
+            print(f"\n  LISTA VETERINARIO\n{i}")
+            print(f"\n  LISTA MASCOTAS\n{j}")
+    def registrar_veterinario(): #funcion que se encargara de pedir los datos del veterinario para ser almacenados
+<<<<<<< HEAD
+=======
+=======
+                j["Veterinario"]=id_veterinario # se agrega el id del veterinario a la informacion de la mascota
+                print(f"\n  LISTA VETERINARIO\n{i}")
+                print(f"\n  LISTA MASCOTAS\n{j}")
+    
+    
+>>>>>>> e26b71d61c9a1a5504ff3e4fa7a9b259986c0a94
+>>>>>>> 3baf3a8decc48c292acd8e40eec992cbc0409abc
                 #OPCION PARA CAMBIAR EL VETERINARIO DE UNA MASCOTA QUE YA TIENE VETERINARIO
                 print("""\n DESEA MODIFICAR UN VETERINARIO DE LA MASCOTA QUE YA TIENE UN VETERINARIO ASIGNADO\n
                     1. SI / 2. NO""")
@@ -104,6 +138,11 @@ class admin:
                         
                     
     def registrar_veterinario():
+<<<<<<< HEAD
+=======
+>>>>>>> 489d767e3eada7d92eea77dae86d4e409152bb4d
+>>>>>>> 755b9147118fab9d82233b4ef46aa80a35b42e74
+>>>>>>> 3baf3a8decc48c292acd8e40eec992cbc0409abc
         while True: 
             try:
                 id = str(input("Ingresa el id del veterinario: ")) #se pide el id 
