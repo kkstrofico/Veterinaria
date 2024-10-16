@@ -46,6 +46,23 @@ class Veterinario:#Clase Veterinario
         #Guardar datos de la mascota y el propietario en la lista 
         propietario.registrar_propietario()
         mascota.registrar_mascota()
+    def buscar_mascota(self):#Metodo para buscar una mascota en especifico
+        mascota_buscar = input('Ingresa el nombre de la mascota que deseas buscar: ')
+        for i in bsd.lista_mascota:
+            if i['Nombre'] == mascota_buscar:
+                print(i)
+        mascota_buscar_id = input('Ingresa el ID de la mascota: ')
+        while mascota_buscar_id not in bsd.ides_mascotas:
+            print('El id ingresado no existe\n asegurare de haber escrito correctamente.')
+            mascota_buscar_id = input('Ingresa el ID de la mascota: ')
+        for i in bsd.lista_mascota:
+            if i['ID'] == mascota_buscar_id:
+                print(i)
+    def buscar_mascotas(self):
+        print('LISTA MASCOTAS')
+        for i in bsd.lista_mascota:
+            print(f"{i.values()}\n")
+
     def tarjeta_profesional(self):#Metodo que solicita la tarjeta profesional
         pass
 def verificar_mascota_existente(nombre,especie):#Verifica si una mascota existe o no
@@ -55,6 +72,5 @@ def verificar_mascota_existente(nombre,especie):#Verifica si una mascota existe 
             return True
         else: 
             return False
-        
-#veterinario = Veterinario()
-#veterinario.registrar_mascota()
+Veterinario().registrar_mascota()   
+Veterinario().buscar_mascota()
