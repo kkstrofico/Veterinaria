@@ -1,4 +1,4 @@
-from Veterinario import ClasesVeterinario #se importa el modulo claseVeterinario que contiene todos los datos del veterinario
+import ClasesVeterinario#se importa el modulo claseVeterinario que contiene todos los datos del veterinario
 import bsd #importamos modulo que contiene las listas y diccionarios donde se almacenaran los datos
 
 while True: 
@@ -33,5 +33,13 @@ while True: #se crea un ciclo for
     except ValueError:
         print("\n\tERROR: dato ingresado no valido")
     break
+<<<<<<< HEAD:src/Admin/Registrar_veterinario.py
 tarjeta = ClasesVeterinario.Veterinario.tarjeta_profesional() #se llama a la funcion tarjeta profesional para agregar lo de la tarjeta profesional
 ClasesVeterinario.Veterinario(id,nombre,apellido,direccion,telefono,tarjeta) #se llama a la funcion clasesVeterinario para que se le asignen los datos que fueron ingresados
+=======
+
+tarjeta = ClasesVeterinario.Veterinario(id,nombre,apellido,direccion,telefono,tarjeta)#se llama a la funcion tarjeta profesional para agregar lo de la tarjeta profesional
+ #se llama a la funcion clasesVeterinario para que se le asignen los datos que fueron ingresados
+tarjeta = ClasesVet
+ClasesVeterinario.Veterinario(id,nombre,apellido,direccion,telefono,tarjeta)
+>>>>>>> 6815c707ec6c0215ca5b52bbdf9d55f4a8982b8a:src/Registrar_veterinario.py

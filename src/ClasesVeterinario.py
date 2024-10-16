@@ -1,14 +1,6 @@
-# Importamos el módulo 'sys' para acceder a las configuraciones del sistema
-import sys  
-
-# Añadimos la ruta de la carpeta que contiene el archivo 'bsd.py' a 'sys.path'.
-# Esto le dice a Python que busque en esta carpeta cuando intentamos importar módulos.
-sys.path.append((r'C:\Users\hp\OneDrive\Documentos\Veterinaria Repositorio\Veterinaria\src'))  
-
-# Ahora, importamos el módulo 'bsd' desde la carpeta que acabamos de añadir a 'sys.path'.
-# Python buscará 'bsd.py' en la ruta especificada y lo cargará.
-import bsd  
-from Propietario_Mascota import ClasseMascota,ClassePropietario
+import ClasseMascota 
+import ClassePropietario
+import bsd
 class Veterinario:#Clase Veterinario
     def __init__(self,id = "",nombres = "",apellidos ="",direccion ="",telefono ="",tarjeta =""):#Todos sus atributos
         self.id = id
@@ -31,11 +23,19 @@ class Veterinario:#Clase Veterinario
         bsd.lista_veterinarios.append(diccionario_veterinario) #Se subio a la lista de veterinarios
     def registrar_mascota(self):
         #Solicitar datos propietario
-        propietario = ClassePropietario(id = input("ID: "),nombre=input("NOMBRE: "),apellido = input("APELLIDOS: "),direccon = input("DIRECCION: "),telefono = input("TELEFON: "),correo = input("CORREO: "))
+        print("\nINGRESAR DATOS PROPIETARIO\n")
+        id = input("ID: "),
+        nombre=input("NOMBRE: "),
+        apellido = input("APELLIDOS: "),
+        direccion = input("DIRECCION: "),
+        telefono = input("TELEFON: "),
+        correo = input("CORREO: ")
+        propietario = ClassePropietario.Propietario(id,nombre,apellido,direccion,telefono,correo)
         #Solicitar datos de la mascota 
+        print("\nINSGRESA LOS DATOS DE LA MASCOTA\n")
         nombre=input("Nombre:")
         especie=input("Especie: ")
-        mascota_existe = verificar_mascota_existente()
+        mascota_existe = verificar_mascota_existente(nombre,especie)
         #No dejar pasar si estos dos datos ya existen
         while mascota_existe == True:
             print("La mascota ya existe")
@@ -55,5 +55,6 @@ def verificar_mascota_existente(nombre,especie):#Verifica si una mascota existe 
             return True
         else: 
             return False
-veterinario = Veterinario()
-veterinario.registrar_mascota()
+        
+#veterinario = Veterinario()
+#veterinario.registrar_mascota()
