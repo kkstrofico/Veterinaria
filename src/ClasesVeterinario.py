@@ -72,5 +72,5 @@ def verificar_mascota_existente(nombre,especie):#Verifica si una mascota existe 
             return True
         else: 
             return False
-Veterinario().registrar_mascota()   
-Veterinario().buscar_mascota()
+#Veterinario().registrar_mascota()   
+#Veterinario().buscar_mascota()
