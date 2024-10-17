@@ -71,6 +71,8 @@ class admin:
                 for m in bsd.lista_mascota: # for que iterara sobre la lista mascotas
                     if m["id"]== mascota_selec: # en caso de que encuentre una mascota con ese id, imprime la información de esa mascota
                         print(m) # imprimir
+                        
+    # FALTA METODO MOSTRAR MASCOTAS VETERINARIO
                 
 
                     
@@ -133,7 +135,6 @@ class admin:
                 # se verificara si el id de este veterinario es igual al que se ingreso
                 if i["Id"]==veterinario_modificar: 
                     # Datos a modificar
-
                     while True:
                         arroa="@gmail.com"
                         nuevo_correo=input("Ingresa el correo electronico del veterinario: ")
