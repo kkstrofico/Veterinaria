@@ -79,7 +79,7 @@ def menu():
             volver_menu()
             
         elif opcion_veterinario =="5": #REALIZAR VISITAS
-            pass
+            ClasesVeterinario.Veterinario().realizar_visitas()
             
             
             
