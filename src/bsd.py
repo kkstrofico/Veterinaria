@@ -1,12 +1,12 @@
 # modulo que contiene las listas generales
 #listas que almacenaran los ides de la mascota, propietario, veterinario
-ides_veterinarios=["1212121212","1414141414"]
+ides_veterinarios=[]
 ides_propietarios=[]
-ides_mascotas=["1234","5678","1456","1212","3113"]
+ides_mascotas=[]
 #listas generales que almacenaran las informaciones de los actores
 veterinario={
 
-            "id":"1212121212",
+            "Id":"1212121212",
             "Nombre":"junior",
             "Apellidos":"herrera",
             "Direccion":"salgar",
@@ -16,7 +16,7 @@ veterinario={
         }
 veterinario2={
 
-            "id":"1414141414",
+            "Id":"1414141414",
             "Nombre":"pepe",
             "Apellidos":"herrera",
             "Direccion":"salgar",
@@ -26,22 +26,40 @@ veterinario2={
         }
 
 diccionario_mascota={
-        "id":"1234",
-        "Nombre": "pepe",
-        "Color": "Rojo",
+        "Id":"1212",
+        "Nombre": "maii",
+        "Color": "red",
         "Especie":"Perro",
         "Raza":"pitbull",
         "Veterinario":""
     }
 diccionario_mascota1={
-        "id":"5678",
+        "Id":"5678",
         "Nombre": "pepe",
         "Color": "Rojo",
         "Especie":"Perro",
         "Raza":"pitbull",
         "Veterinario":""
     }
+diccionario_mascota2={
+        "Id":"3421",
+        "Nombre": "pepe",
+        "Color": "Rojo",
+        "Especie":"gato",
+        "Raza":"ros",
+        "Veterinario":""
+    }
 
-lista_veterinarios =[veterinario,veterinario2]
-lista_mascota=[diccionario_mascota,diccionario_mascota1]
+diccionario_propietario={
+            "Id":"1212121212",
+            "Nombre":"jh",
+            "Apellidos":"Guzman",
+            "Direccion":"1e13",
+            "Telefono":"13131",
+            "Correo":"jdjscs",
+            "Mascotas":["1212","5678"]
+        }
+
+lista_veterinarios =[]
+lista_mascota=[]
 lista_propietario =[]

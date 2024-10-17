@@ -11,13 +11,13 @@ class Propietario: #clase propietario que contiene la informacion del propietari
 
     def registrar_propietario(self): #metodo del propietario que permitira almacenar los datos del propietario en un diccionario
         diccionario_propietario={
-            "ID":self.id,
+            "id":self.id,
             "Nombre":self.nombres,
             "Apellidos":self.apellidos,
             "Direccion":self.direccion,
             "Telefono":self.telefono,
             "Correo":self.correo,
-            "Mascota":self.mascota
+            "Mascotas":[self.mascota]
         }
         bsd.ides_propietarios.append(self.id) #se almacenara en la lista ides_propietarios el id del propietario
         bsd.lista_propietario.append(diccionario_propietario) #se almacenara el diccionario con toda la informacion del propietario a la lista que contiene todas las informaciones del propietario

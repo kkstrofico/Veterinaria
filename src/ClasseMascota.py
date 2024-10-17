@@ -14,7 +14,7 @@ class Mascota: # clase mascota, que se encarga de recopilar la informacion de la
             "Color": self.color,
             "Especie":self.especie,
             "Raza":self.raza,
-            "Veterinario":self.veterinario
+            "Veterinario":""
         }
         bsd.ides_mascotas.append(self.id) # se almacenara en la lista ides_mascotas el id de la mascota actual
         bsd.lista_mascota.append(diccionario_mascota) # se almacenara el diccionario con toda la información de la mascota a la lista que contiene todas las informaciones de las mascotas
