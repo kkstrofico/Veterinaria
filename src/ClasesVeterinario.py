@@ -121,6 +121,7 @@ class Veterinario:#Clase Veterinario
                         peso_mascota= input("Ingresa el peso: ")
                         if peso_mascota.isnumeric()== False:
                             print("Error, ingresa datos numericos")
+                    
                         
                     
                     
