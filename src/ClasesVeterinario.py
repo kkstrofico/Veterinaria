@@ -1,6 +1,8 @@
 import random
 import ClasseMascota 
 import ClassePropietario
+import ClaseAdmin
+import principal
 import bsd
 class Veterinario:#Clase Veterinario
     def __init__(self,id = "",nombres = "",apellidos ="",direccion ="",telefono ="",tarjeta=""):
@@ -84,8 +86,46 @@ class Veterinario:#Clase Veterinario
         telefono = input("TELEFONO: "),
         correo = input("CORREO: ")
         propietario = ClassePropietario.Propietario(Id,nombre,apellido,direccion,telefono,correo)
-        
-        
+    def realizar_visitas(self): #Metodo de veterinario, que se encargara de realizar la visita
+        for i in bsd.lista_veterinarios: # recorrer la lista de los propietarios, para mostrar las mascotas
+            if i["Id"] == self.id:
+                if i["Mascotas"]==[]: # si el veterinario no tiene asignado una mascota
+                    print("Error, ese veterinario no tiene asignada ninguna mascota, (asignale una)")
+                    principal.menu() # se redirije al menu nuevamente
+            else: # si por el contrario si tiene
+                print(i["Mascotas"])# Mostrar mascotas que tiene asignadas la mascota
+                #Excepciones
+                while True:
+                    id_mascota_visita = input("Ingresa el id de la mascota a la que se le realizara la visita: ")
+                    if id_mascota_visita.isnumeric()== False: # si la entrada es distinta a numeros
+                        print("Error, ingresa numeros")
+                    elif len(id_mascota_visita) !=4: # si ingresa mas de 4 digitos
+                        print("Error, digita 4 digitos")
+                    elif id_mascota_visita not in i["Mascotas"]:
+                        print("Error, digita un id correcto")
+                    else:
+                        break
+                    
+                    #DATOS DE VISITA
+                    print("\n\t REALIZAR VISITA\n")
+                    #Temperatura
+                    while True:
+                        temperatura_mascota = input("Ingresa la temperatura: ")
+                        if temperatura_mascota.isnumeric()== False:
+                            print("Ingresa datos numericos")
+                        elif len(temperatura_mascota) !=2:
+                            print("Ingresa correctamente la temperatura")
+                        else:
+                            break
+                    while True:
+                        peso_mascota= input("Ingresa el peso: ")
+                        if peso_mascota.isnumeric()== False:
+                            print("Error, ingresa datos numericos")
+                    
+                        
+                    
+                    
+
     def buscar_mascota(self):#Metodo para buscar una mascota en especifico
         mascota_buscar = input('Ingresa el nombre de la mascota que deseas buscar: ').lower() # se solicita el nombre de la mascota que se desea buscar
         for i in bsd.lista_mascota: 
