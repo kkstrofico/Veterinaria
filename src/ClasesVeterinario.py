@@ -125,23 +125,7 @@ class Veterinario:#Clase Veterinario
                         
                     
                     
-                    
-                    
-"""                     •	Temperatura
-•	Peso
-•	Frecuencia respiratoria
-•	Frecuencia cardíaca
-•	Estado de animo
-•	Fecha de registro
-•	Id_Profesional (Es igual al Id_Veterinario)
-•	Recomendaciones dadas (Medicamentos formulados)
-"""
-                
-                
-                
-                
-                
-        
+
     def buscar_mascota(self):#Metodo para buscar una mascota en especifico
         mascota_buscar = input('Ingresa el nombre de la mascota que deseas buscar: ').lower() # se solicita el nombre de la mascota que se desea buscar
         for i in bsd.lista_mascota: 
