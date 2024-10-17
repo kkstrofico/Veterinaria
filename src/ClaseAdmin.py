@@ -75,102 +75,108 @@ class admin:
 
                     
     def modificar_propietario(): # funcion que actualiza los datos del propietario
-        while True:
-            propietario_modificar = input("Ingresa el ID del propietario: ") # solicitare el nombre del propietario
-            if propietario_modificar not in bsd.ides_propietarios: # si el id ingresado no se encuentra en la listra    ides_propietarios, mostrar error
-                print("No existe propietario con ese numero de ID")
-            else:
-                break
-        for i in bsd.lista_propietario: # recorrer la lista que contiene todos los propietarios
-            if i["Id"]== propietario_modificar: # se accede a cada propietario y se compara su ID
-                #Solicitar nuevos datos y control de excepciones
-                while True:
-                    nueva_direccion = (input("Ingresa la direccion: "))
-                    if nueva_direccion.isnumeric()==True:
-                        print("Error, no ingreses numeros")
-                    else:
-                        break
-                    
-                while True:
-                    nuevo_telefono = input("Ingresa el numero de telefono: ")
-                    if nuevo_telefono.isnumeric()== False:
-                        print("No ingreses str")
-                    else:
-                        break
-                while True:
-                    arroa="@gmail.com"
-                    nuevo_correo=input("Ingresa el correo electronico del veterinario: ")
-                    if arroa not in nuevo_correo:
-                        print("Ingresa el @gmail.com")
-                    else:
-                        break
-                #Reemplazar los valores de las claves del diccionario 
-                i["Direccion"]=nueva_direccion
-                i["Telefono"]=nuevo_telefono
-                i["Correo"]= nuevo_correo
-                print("\nInformación de Propietario Actualizada\n")
+        if bsd.lista_propietario ==[]:
+            print("Error, el veterinario no ha agregado Propietarios")
+        else:
+            while True:
+                propietario_modificar = input("Ingresa el ID del propietario: ") # solicitare el nombre del propietario
+                if propietario_modificar not in bsd.ides_propietarios: # si el id ingresado no se encuentra en la listra        ides_propietarios, mostrar error
+                    print("No existe propietario con ese numero de ID")
+                else:
+                    break
+            for i in bsd.lista_propietario: # recorrer la lista que contiene todos los propietarios
+                if i["Id"]== propietario_modificar: # se accede a cada propietario y se compara su ID
+                    #Solicitar nuevos datos y control de excepciones
+                    while True:
+                        nueva_direccion = (input("Ingresa la direccion: "))
+                        if nueva_direccion.isnumeric()==True:
+                            print("Error, no ingreses numeros")
+                        else:
+                            break
+                        
+                    while True:
+                        nuevo_telefono = input("Ingresa el numero de telefono: ")
+                        if nuevo_telefono.isnumeric()== False:
+                            print("No ingreses str")
+                        else:
+                            break
+                    while True:
+                        arroa="@gmail.com"
+                        nuevo_correo=input("Ingresa el correo electronico del veterinario: ")
+                        if arroa not in nuevo_correo:
+                            print("Ingresa el @gmail.com")
+                        else:
+                            break
+                    #Reemplazar los valores de las claves del diccionario 
+                    i["Direccion"]=nueva_direccion
+                    i["Telefono"]=nuevo_telefono
+                    i["Correo"]= nuevo_correo
+                    print("\nInformación de Propietario Actualizada\n")
                 
     def modificar_veterinario():
-        while True:
-            # solicitar id de veterinario a modificar
-            veterinario_modificar = input("Ingresa ID del veterinario: ")
-            if veterinario_modificar.isalpha() == True:
-                print("Ingresa solo caracteres numericos")
-            elif len(veterinario_modificar) != 10:
-                print("Error, ingresa solo 10 digitos")
-            elif veterinario_modificar not in bsd.ides_veterinarios:
-                print("Error, ese veterinario no existe")
-            else:
-                break
-        # se recorrera la lista de los veterinarios
-        for i in bsd.lista_veterinarios:
-            # se verificara si el id de este veterinario es igual al que se ingreso
-            if i["Id"]==veterinario_modificar: 
-                # Datos a modificar
-
-                while True:
-                    arroa="@gmail.com"
-                    nuevo_correo=input("Ingresa el correo electronico del veterinario: ")
-                    if arroa not in nuevo_correo:
-                        print("Ingresa el @gmail.com")
-                    else:
-                        break
-                    
-                while True:
-                    nueva_direccion = input("Ingresa la direccion de veterinario: ")
-                    if nueva_direccion.isnumeric()== True:
-                        print("Error, no ingreses numeros")
-                    else:
-                        break
-                while True:
-                    nuevo_telefono = input("Ingresa el numero telefonico: ")
-                    if nuevo_telefono.isnumeric() == False:
-                        print("Error, ingresa solo numeros")
-                    elif len(nuevo_telefono)  != 10:
-                        print("Error, ingresa un numero telefonico valido, (de 10 digitos)")
-                    else:
-                        break
-                while True:
-                    mod_tarjeta_profesional= input("Desea agregar otra tarjeta profesional si/no: ").lower()
-                    if mod_tarjeta_profesional != "si" and mod_tarjeta_profesional != "no":
-                        print("Error, ingresa si/no")
-                    else:
-                        break
-                if mod_tarjeta_profesional =="si":  
-                    print("\n   TARJETA PROFESIONAL \n")
-                    nueva_tarjeta_profesional_veterinario = ClasesVeterinario.Veterinario().tarjeta_profesional() # se llama la funcion tarjeta del modulo  tarjeta_veterinario
-                    i["Telefono"]=nuevo_telefono 
-                    i["Direccion"]= nueva_direccion
-                    i["Correo"]=nuevo_correo
-                    i["tarjeta Profesional"].append(nueva_tarjeta_profesional_veterinario)
+        if bsd.ides_veterinarios==[]:
+            print("Error, no se ha registrado un veterinario")
+        else:
+            while True:
+                # solicitar id de veterinario a modificar
+                veterinario_modificar = input("Ingresa ID del veterinario: ")
+                if veterinario_modificar.isalpha() == True:
+                    print("Ingresa solo caracteres numericos")
+                elif len(veterinario_modificar) != 10:
+                    print("Error, ingresa solo 10 digitos")
+                elif veterinario_modificar not in bsd.ides_veterinarios:
+                    print("Error, ese veterinario no existe")
                 else:
-                    i["Telefono"]=nuevo_telefono 
-                    i["Direccion"]= nueva_direccion
-                    i["Correo"]=nuevo_correo
+                    break
+            # se recorrera la lista de los veterinarios
+            for i in bsd.lista_veterinarios:
+                # se verificara si el id de este veterinario es igual al que se ingreso
+                if i["Id"]==veterinario_modificar: 
+                    # Datos a modificar
 
-                print("Información actualizada")
-                print("")
-                print(i) # imprimira el diccionario de los datos del veterinario que se modifico
+                    while True:
+                        arroa="@gmail.com"
+                        nuevo_correo=input("Ingresa el correo electronico del veterinario: ")
+                        if arroa not in nuevo_correo:
+                            print("Ingresa el @gmail.com")
+                        else:
+                            break
+                        
+                    while True:
+                        nueva_direccion = input("Ingresa la direccion de veterinario: ")
+                        if nueva_direccion.isnumeric()== True:
+                            print("Error, no ingreses numeros")
+                        else:
+                            break
+                    while True:
+                        nuevo_telefono = input("Ingresa el numero telefonico: ")
+                        if nuevo_telefono.isnumeric() == False:
+                            print("Error, ingresa solo numeros")
+                        elif len(nuevo_telefono)  != 10:
+                            print("Error, ingresa un numero telefonico valido, (de 10 digitos)")
+                        else:
+                            break
+                    while True:
+                        mod_tarjeta_profesional= input("Desea agregar otra tarjeta profesional si/no: ").lower()
+                        if mod_tarjeta_profesional != "si" and mod_tarjeta_profesional != "no":
+                            print("Error, ingresa si/no")
+                        else:
+                            break
+                    if mod_tarjeta_profesional =="si":  
+                        print("\n   TARJETA PROFESIONAL \n")
+                        nueva_tarjeta_profesional_veterinario = ClasesVeterinario.Veterinario().tarjeta_profesional() # se llama la funcion tarjeta del modulo  tarjeta_veterinario
+                        i["Telefono"]=nuevo_telefono 
+                        i["Direccion"]= nueva_direccion
+                        i["Correo"]=nuevo_correo
+                        i["tarjeta Profesional"].append(nueva_tarjeta_profesional_veterinario)
+                    else:
+                        i["Telefono"]=nuevo_telefono 
+                        i["Direccion"]= nueva_direccion
+                        i["Correo"]=nuevo_correo
+
+                    print("Información actualizada")
+                    print("")
+                    print(i) # imprimira el diccionario de los datos del veterinario que se modifico
 
     def asignar(): # funcion que se encargara de asignar un veterinario a una mascota, y una mascota a un veterinario
         while True:
@@ -194,7 +200,7 @@ class admin:
                 for j in bsd.lista_mascota: # un for que iterara sobre las mascotas y mostrara las que no tienen veterinario
                     mascotas_sin_veterinario=[] # id de mascotas que no tienen veterinario
                     if j["Veterinario"]=="": # si en el diccionario de las mascotas, en la clave Veterinario tenga un valor, en caso    de que no, se le asignara el id del veterinario a essta mascota
-                        mascotas_sin_veterinario.append(j["id"])
+                        mascotas_sin_veterinario.append(j["Id"])
                         print(f"\n MASCOTAS SIN VETERINARIO {mascotas_sin_veterinario[0]}")
                         while True:
                             id_mascota= input("Ingresa el id de la mascota: ") # se solicita el numero de id de la mascota
@@ -249,7 +255,7 @@ class admin:
                         else:
                             break
                     for m in bsd.lista_mascota: # recorrer la lista de las mascotas para cambiar su veterinario
-                        if m["id"]== id_mascota_mod: # si el id es igual al que se encuentra en el diccionario
+                        if m["Id"]== id_mascota_mod: # si el id es igual al que se encuentra en el diccionario
                             while True:
                                 id_veterinario=input("Ingresa el id del veterinario que asignaras: ")
                                 if id_veterinario not in bsd.ides_veterinarios:
